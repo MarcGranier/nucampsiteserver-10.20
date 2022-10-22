@@ -3,19 +3,18 @@ const Schema = mongoose.Schema;
 
 const favoriteSchema = new Schema({
   user: {
-    type: mongoose.Schema.Types,
-    ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "User",
+    required: true,
   },
   campsites: [
     {
-      type: mongoose.Schema.Types,
-      ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Campsite",
     },
   ],
 });
 
-const Favorite = mongoose.model("Favorite", FavoriteSchema);
+const Favorite = mongoose.model("Favorite", favoriteSchema);
 
 module.exports = Favorite;
